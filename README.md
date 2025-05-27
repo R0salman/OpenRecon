@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://your-logo-url.com/logo.png" alt="OpenRecon Logo" width="200">
+  <img src="images/logo.png" alt="OpenRecon Logo" width="200">
 </p>
 
 <h1 align="center">OpenRecon</h1>
@@ -21,7 +21,7 @@
 </p>
 
 <div align="center">
-  <img src="images/example.png" alt="OpenRecon" width="80%">
+  <img src="images/Screenshot 2025-05-27 123149.png" alt="OpenRecon" width="80%">
 </div>
 
 
