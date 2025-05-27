@@ -1,0 +1,400 @@
+{
+    "endpoints": [
+        {
+            "path": "/profile",
+            "methods": ["GET", "PUT", "DELETE"],
+            "parameters": {
+                "query": {
+                    "id": {
+                        "type": "string",
+                        "required": true,
+                        "description": "User ID"
+                    }
+                },
+                "body": {
+                    "name": {
+                        "type": "string",
+                        "required": false,
+                        "description": "User's full name"
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "required": false,
+                        "description": "User's email address"
+                    },
+                    "age": {
+                        "type": "integer",
+                        "required": false,
+                        "description": "User's age"
+                    }
+                }
+            }
+        },
+        {
+            "path": "/profile/settings",
+            "methods": ["GET", "POST"],
+            "parameters": {
+                "query": {
+                    "id": {
+                        "type": "string",
+                        "required": true,
+                        "description": "User ID"
+                    }
+                },
+                "body": {
+                    "theme": {
+                        "type": "string",
+                        "enum": ["light", "dark", "system"],
+                        "required": false,
+                        "description": "UI theme preference"
+                    },
+                    "notifications": {
+                        "type": "boolean",
+                        "required": false,
+                        "description": "Enable/disable notifications"
+                    }
+                }
+            }
+        },
+        {
+            "path": "/profile/security",
+            "methods": ["GET", "POST"],
+            "parameters": {
+                "query": {
+                    "id": {
+                        "type": "string",
+                        "required": true,
+                        "description": "User ID"
+                    }
+                },
+                "body": {
+                    "current_password": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Current password"
+                    },
+                    "new_password": {
+                        "type": "string",
+                        "required": true,
+                        "description": "New password"
+                    },
+                    "two_factor": {
+                        "type": "boolean",
+                        "required": false,
+                        "description": "Enable/disable 2FA"
+                    }
+                }
+            }
+        },
+        {
+            "path": "/auth/login",
+            "methods": ["POST"],
+            "parameters": {
+                "body": {
+                    "username": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Username or email"
+                    },
+                    "password": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Password"
+                    },
+                    "remember": {
+                        "type": "boolean",
+                        "required": false,
+                        "description": "Remember me"
+                    }
+                }
+            }
+        },
+        {
+            "path": "/auth/register",
+            "methods": ["POST"],
+            "parameters": {
+                "body": {
+                    "username": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Username"
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "required": true,
+                        "description": "Email address"
+                    },
+                    "password": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Password"
+                    },
+                    "confirm_password": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Confirm password"
+                    }
+                }
+            }
+        },
+        {
+            "path": "/auth/reset-password",
+            "methods": ["POST"],
+            "parameters": {
+                "body": {
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "required": true,
+                        "description": "Email address"
+                    }
+                }
+            }
+        },
+        {
+            "path": "/api/users",
+            "methods": ["GET", "POST"],
+            "parameters": {
+                "query": {
+                    "page": {
+                        "type": "integer",
+                        "required": false,
+                        "description": "Page number"
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "required": false,
+                        "description": "Items per page"
+                    },
+                    "search": {
+                        "type": "string",
+                        "required": false,
+                        "description": "Search query"
+                    }
+                },
+                "body": {
+                    "name": {
+                        "type": "string",
+                        "required": true,
+                        "description": "User's name"
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "required": true,
+                        "description": "User's email"
+                    },
+                    "role": {
+                        "type": "string",
+                        "enum": ["user", "admin", "moderator"],
+                        "required": false,
+                        "description": "User role"
+                    }
+                }
+            }
+        },
+        {
+            "path": "/api/users/{id}",
+            "methods": ["GET", "PUT", "DELETE"],
+            "parameters": {
+                "path": {
+                    "id": {
+                        "type": "string",
+                        "required": true,
+                        "description": "User ID"
+                    }
+                },
+                "body": {
+                    "name": {
+                        "type": "string",
+                        "required": false,
+                        "description": "User's name"
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "required": false,
+                        "description": "User's email"
+                    },
+                    "role": {
+                        "type": "string",
+                        "enum": ["user", "admin", "moderator"],
+                        "required": false,
+                        "description": "User role"
+                    }
+                }
+            }
+        },
+        {
+            "path": "/api/posts",
+            "methods": ["GET", "POST"],
+            "parameters": {
+                "query": {
+                    "page": {
+                        "type": "integer",
+                        "required": false,
+                        "description": "Page number"
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "required": false,
+                        "description": "Items per page"
+                    },
+                    "category": {
+                        "type": "string",
+                        "required": false,
+                        "description": "Post category"
+                    }
+                },
+                "body": {
+                    "title": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Post title"
+                    },
+                    "content": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Post content"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "required": false,
+                        "description": "Post tags"
+                    }
+                }
+            }
+        },
+        {
+            "path": "/api/posts/{id}",
+            "methods": ["GET", "PUT", "DELETE"],
+            "parameters": {
+                "path": {
+                    "id": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Post ID"
+                    }
+                },
+                "body": {
+                    "title": {
+                        "type": "string",
+                        "required": false,
+                        "description": "Post title"
+                    },
+                    "content": {
+                        "type": "string",
+                        "required": false,
+                        "description": "Post content"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "required": false,
+                        "description": "Post tags"
+                    }
+                }
+            }
+        },
+        {
+            "path": "/api/comments",
+            "methods": ["GET", "POST"],
+            "parameters": {
+                "query": {
+                    "post_id": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Post ID"
+                    }
+                },
+                "body": {
+                    "content": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Comment content"
+                    },
+                    "parent_id": {
+                        "type": "string",
+                        "required": false,
+                        "description": "Parent comment ID"
+                    }
+                }
+            }
+        },
+        {
+            "path": "/api/comments/{id}",
+            "methods": ["GET", "PUT", "DELETE"],
+            "parameters": {
+                "path": {
+                    "id": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Comment ID"
+                    }
+                },
+                "body": {
+                    "content": {
+                        "type": "string",
+                        "required": false,
+                        "description": "Comment content"
+                    }
+                }
+            }
+        },
+        {
+            "path": "/api/upload",
+            "methods": ["POST"],
+            "parameters": {
+                "body": {
+                    "file": {
+                        "type": "file",
+                        "required": true,
+                        "description": "File to upload"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": ["image", "document", "video"],
+                        "required": true,
+                        "description": "File type"
+                    }
+                }
+            }
+        },
+        {
+            "path": "/api/search",
+            "methods": ["GET"],
+            "parameters": {
+                "query": {
+                    "q": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Search query"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": ["all", "users", "posts", "comments"],
+                        "required": false,
+                        "description": "Search type"
+                    },
+                    "page": {
+                        "type": "integer",
+                        "required": false,
+                        "description": "Page number"
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "required": false,
+                        "description": "Items per page"
+                    }
+                }
+            }
+        }
+    ]
+} 
