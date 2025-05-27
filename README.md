@@ -109,10 +109,12 @@ openrecon scan --target example.com --flags "-T4 -F"
 | cms | CMS fingerprinting (WordPress, Joomla, etc.) |
 | csrf | CSRF vulnerability scanning |
 | graphql | GraphQL endpoint detection |
+| payloads |  Curated collection of security testing payloads (sourced from [Payload Box](https://github.com/payloadbox)) |
 
 ## Requirements
 - Python 3.7+
 - Nmap (must be in system PATH) - [Download Nmap](https://nmap.org/download.html)
+- playwright
 
 ## Contributing
 
