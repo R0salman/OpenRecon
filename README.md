@@ -20,8 +20,8 @@
   </a>
 </p>
 
-<div align="center">
-  <img src="images/Screenshot 2025-05-27 123149.png" alt="OpenRecon" width="80%">
+<div>
+  <a href="https://github.com/R0salman/OpenRecon"><img src="https://i.ibb.co/xKN8JbXp/Screenshot-2025-05-27-123149.png" alt="Screenshot-2025-05-27-123149" border="0"></a>
 </div>
 
 
