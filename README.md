@@ -126,8 +126,6 @@ We welcome contributions! Here's how to help:
 4. Push to the branch: `git push origin feature/your-feature`
 5. Submit a pull request
 
-Please read `CONTRIBUTING.md` for details on our code standards.
-
 ## License
 
 This project is licensed under the MIT License.
