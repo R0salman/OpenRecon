@@ -1,8 +1,8 @@
-
-<p align="center">
-  <img src="images/logo.png" alt="OpenRecon Logo" width="200">
-</p>
-
+<h1>
+  <p align="center">
+    <a href="https://github.com/R0salman/OpenRecon"><img src="https://i.ibb.co/Q7YbJ5Fv/logo.png" alt="logo" border="0"></a>
+  </p>
+</h1>
 <h1 align="center">OpenRecon</h1>
 <p align="center">
   <em>Extensible CLI Reconnaissance & Vulnerability Assessment Tool</em>
