@@ -94,7 +94,7 @@ openrecon scan --target example.com --flags "-T4 -F"
 
 #### For full documentation, usage examples, module configurations, and troubleshooting, please visit:
 
-**[OpenRecon Documentation](https://github.com/yourusername/openrecon/wiki)**  
+**[OpenRecon Documentation](https://r0salman.github.io/OpenRecon/)**  
 
 ## Available Modules
 
