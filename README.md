@@ -79,13 +79,19 @@ python -m openrecon --help
  -Click OK on all dialogs and restart your terminal
 
 ### Option 2: Manual Installation
+**Linux**
 ```bash
 git clone https://github.com/yourusername/openrecon
 cd openrecon
 chmod +x setup.sh
 ./setup.sh
 ```
-
+**Windows**
+```bash
+git clone https://github.com/R0salman/OpenRecon
+cd OpenRecon
+setup.bat
+```
 ## Basic Usage
 ```bash
 openrecon --help
