@@ -9,7 +9,7 @@ import asyncio
 from rich.console import Console
 import datetime
 
-VERSION = "0.1.1"
+VERSION = "0.1.5"
 
 from openrecon.scanners.portScanner import run_port_scan
 from openrecon.scanners.netDisc import live_discovery
